@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PawDay — Догляд за вашими улюбленцями</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav id="navbar">
+  <a class="logo" href="#" onclick="navigate('home')">
+    <div class="logo-icon">🐾</div>
+    PawDay
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="navigate('home')" id="nav-home" class="active">Головна</a></li>
+    <li><a href="#" onclick="navigate('about')" id="nav-about">Про нас</a></li>
+    <li><a href="#" onclick="navigate('services')" id="nav-services">Послуги</a></li>
+    <li><a href="#" onclick="navigate('shop')" id="nav-shop">Магазин</a></li>
+    <li><a href="#" onclick="navigate('prices')" id="nav-prices">Ціни</a></li>
+    <li><a href="#" onclick="navigate('contacts')" id="nav-contacts" class="nav-cta">Контакти</a></li>
+  </ul>
+</nav>
+
+<div class="page active" id="page-home">
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🌟 Найкраще місце для вашого улюбленця</div>
+      <h1 class="hero-title">
+        Кожен день —<br>
+        <span class="accent">щасливий</span><br>
+        <span class="accent-teal">PawDay</span>
+      </h1>
+      <p class="hero-desc">
+        Денний догляд, грумінг, SPA-процедури та магазин для котів і собак.
+        Ваш улюбленець заслуговує на найкраще!
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="navigate('services')">Наші послуги →</button>
+        <button class="btn-secondary" onclick="navigate('contacts')">Записатись</button>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="pet-card">
+        <span class="pet-emoji-big">🐶</span>
+        <div style="text-align:center">
+          <div style="font-size:1.1rem; font-weight:800; margin-bottom:4px;">Собака щасливий!</div>
+          <div style="font-size:0.85rem; color:var(--text-muted);">Щойно відвідав PawDay SPA</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-chip">
+            <div class="stat-num" id="counter-clients">0</div>
+            <div class="stat-lbl">Клієнтів</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-num" id="counter-years">0</div>
+            <div class="stat-lbl">Років</div>
+          </div>
+          <div class="stat-chip">
+            <div class="stat-num" id="counter-pets">0</div>
+            <div class="stat-lbl">Щасливих</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      SCROLL
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="section-label">Що ми пропонуємо</div>
+    <h2 class="section-title">Послуги <span style="color:var(--brand-teal)">PawDay</span></h2>
+    <p class="section-desc">Все необхідне для здоров'я та щастя вашого улюбленця під одним дахом</p>
+
+    <div class="services-grid">
+      <div class="service-card" onclick="navigate('services')">
+        <div class="service-icon icon-teal">🐕</div>
+        <div class="service-name">Денний догляд для собак</div>
+        <div class="service-desc">Ігрова зона, відпочинок, годування та вигул. Ваш песик буде в найкращих руках!</div>
+        <button class="service-arrow">Детальніше →</button>
+      </div>
+      <div class="service-card" onclick="navigate('services')">
+        <div class="service-icon icon-orange">🐈</div>
+        <div class="service-name">Денний догляд для котів</div>
+        <div class="service-desc">Комфортне середовище, ігрові зони та індивідуальний підхід для вашого котика</div>
+        <button class="service-arrow">Детальніше →</button>
+      </div>
+      <div class="service-card" onclick="navigate('services')">
+        <div class="service-icon icon-pink">✂️</div>
+        <div class="service-name">Грумінг і SPA</div>
+        <div class="service-desc">Стрижка, купання, чистка вух, підстригання кігтів та розслаблюючий SPA-догляд</div>
+        <button class="service-arrow">Детальніше →</button>
+      </div>
+      <div class="service-card" onclick="navigate('shop')">
+        <div class="service-icon icon-green">🛒</div>
+        <div class="service-name">Магазин</div>
+        <div class="service-desc">Корм, ласощі, іграшки та аксесуари — все найкраще для вашого улюбленця</div>
+        <button class="service-arrow">До магазину →</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-about">
+  <section style="padding-top:120px">
+    <div class="section-label">Хто ми</div>
+    <div class="about-grid">
+      <div>
+        <h1 class="section-title">Компанія, яка <span style="color:var(--brand-orange)">любить тварин</span></h1>
+        <p style="color:var(--text-muted); line-height:1.8; margin-bottom:24px;">
+          PawDay — це сімейна компанія з догляду за домашніми тваринами, заснована у 2019 році.
+          Ми створили місце, де кожен улюбленець отримує увагу, любов і професійний догляд.
+        </p>
+        <p style="color:var(--text-muted); line-height:1.8;">
+          Наша команда складається з досвідчених ветеринарів, грумерів і тренерів,
+          які щиро люблять тварин і прагнуть до їхнього добробуту.
+        </p>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <span class="feature-icon">🏆</span>
+            <div>
+              <div class="feature-title">Досвід і Professionalізм</div>
+              <div class="feature-desc">Понад 5 років досвіду роботи з домашніми тваринами різних порід</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💚</span>
+            <div>
+              <div class="feature-title">Любов до тварин</div>
+              <div class="feature-desc">Кожен член нашої команди — справжній любитель тварин</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🔒</span>
+            <div>
+              <div class="feature-title">Безпека та Комфорт</div>
+              <div class="feature-desc">Сучасне обладнання і суворе дотримання норм безпеки</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-stat-card">
+          <div class="stat-big" data-target="500">0</div>
+          <div class="stat-text">Щасливих клієнтів</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="stat-big" data-target="5">0</div>
+          <div class="stat-text">Років досвіду</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="stat-big" data-target="12">0</div>
+          <div class="stat-text">Фахівців у команді</div>
+        </div>
+        <div class="about-stat-card">
+          <div class="stat-big" data-target="98">0</div>
+          <div class="stat-text">% Задоволених клієнтів</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Наша команда</div>
+    <h2 class="section-title">Познайомтеся з <span style="color:var(--brand-teal)">командою</span></h2>
+    <p class="section-desc">Перелік персоналу — люди, які дбають про ваших улюбленців щодня</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">👩‍⚕️</div>
+        <div class="team-name">Олена Коваль</div>
+        <div class="team-role">Ветеринар-директор</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, var(--brand-orange), #ff6b35)">✂️</div>
+        <div class="team-name">Іван Петренко</div>
+        <div class="team-role">Провідний грумер</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, var(--brand-pink), #ff6b35)">🐕</div>
+        <div class="team-name">Марія Шевченко</div>
+        <div class="team-role">Кінолог-тренер</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, var(--brand-purple), #e91e8c)">🐈</div>
+        <div class="team-name">Дмитро Лисенко</div>
+        <div class="team-role">Фелінолог</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, var(--brand-green), var(--brand-teal))">🛁</div>
+        <div class="team-name">Анна Мороз</div>
+        <div class="team-role">SPA-спеціаліст</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #6c63ff, var(--brand-purple))">🍖</div>
+        <div class="team-name">Тарас Бондаренко</div>
+        <div class="team-role">Зооняня</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Правила</div>
+    <h2 class="section-title">Правила та <span style="color:var(--brand-orange)">умови</span></h2>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="contact-card">
+        <div class="contact-icon">📋</div>
+        <div>
+          <div class="contact-label">Запис</div>
+          <div class="contact-value">Попередній запис обов'язковий</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💉</div>
+        <div>
+          <div class="contact-label">Вакцинація</div>
+          <div class="contact-value">Наявність довідки про щеплення</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">⏰</div>
+        <div>
+          <div class="contact-label">Час роботи</div>
+          <div class="contact-value">Пн–Пт: 8:00–20:00, Сб–Нд: 9:00–18:00</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🚫</div>
+        <div>
+          <div class="contact-label">Агресія</div>
+          <div class="contact-value">Агресивні тварини приймаються індивідуально</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-services">
+  <section style="padding-top:120px">
+    <div class="section-label">Наші послуги</div>
+    <h1 class="section-title">Повний спектр <span style="color:var(--brand-teal)">догляду</span></h1>
+    <p class="section-desc">Ми пропонуємо все необхідне для здоров'я, краси та щастя вашого улюбленця</p>
+
+    <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:20px; color:var(--brand-teal)">🐕 Денний догляд для собак</h3>
+    <div class="services-grid" style="margin-bottom:48px">
+      <div class="service-card">
+        <div class="service-icon icon-teal">🏠</div>
+        <div class="service-name">Денне перебування</div>
+        <div class="service-desc">Комфортне та безпечне середовище для вашого улюбленця на весь день</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-orange">🎯</div>
+        <div class="service-name">Ігрова зона</div>
+        <div class="service-desc">Велика ігрова зона з різноманітними іграшками та активностями</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-green">😴</div>
+        <div class="service-name">Зона відпочинку</div>
+        <div class="service-desc">Затишні місця для відпочинку та сну вашого вихованця</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-pink">🦮</div>
+        <div class="service-name">Вигул та дресирування</div>
+        <div class="service-desc">Регулярні прогулянки та базова дресирування від досвідченого кінолога</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:20px; color:var(--brand-orange)">🐈 Денний догляд для котів</h3>
+    <div class="services-grid" style="margin-bottom:48px">
+      <div class="service-card">
+        <div class="service-icon icon-orange">🏠</div>
+        <div class="service-name">Денне перебування</div>
+        <div class="service-desc">Спеціально обладнані приміщення для котів з урахуванням їхньої природи</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-teal">🎮</div>
+        <div class="service-name">Ігрова зона</div>
+        <div class="service-desc">Котяче дерево, тунелі, іграшки та вертикальні простори для лазіння</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-green">🍽️</div>
+        <div class="service-name">Годування</div>
+        <div class="service-desc">Харчування за розкладом відповідно до рекомендацій власника</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:20px; color:var(--brand-pink)">✂️ Грумінг та SPA</h3>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon icon-pink">💈</div>
+        <div class="service-name">Стрижка</div>
+        <div class="service-desc">Професійна стрижка для собак та котів будь-яких порід</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-teal">🛁</div>
+        <div class="service-name">Купання</div>
+        <div class="service-desc">Повне купання з професійними засобами для догляду за шерстю</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-orange">👂</div>
+        <div class="service-name">Чистка вух та кігтів</div>
+        <div class="service-desc">Обережна чистка вух та підстригання кігтів досвідченими спеціалістами</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon icon-green">💆</div>
+        <div class="service-name">SPA-догляд</div>
+        <div class="service-desc">Ароматерапія, масаж та спеціальні процедури для релаксації тварини</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-shop">
+  <section style="padding-top:120px">
+    <div class="section-label">Наш магазин</div>
+    <h1 class="section-title">Все для <span style="color:var(--brand-teal)">улюбленця</span></h1>
+    <p class="section-desc">Корм, ласощі, іграшки та аксесуари — найкращий вибір для вашого вихованця</p>
+
+    <div class="shop-filter">
+      <button class="filter-btn active" onclick="filterProducts('all', this)">Всі товари</button>
+      <button class="filter-btn" onclick="filterProducts('food', this)">🍖 Корм</button>
+      <button class="filter-btn" onclick="filterProducts('treats', this)">🦴 Ласощі</button>
+      <button class="filter-btn" onclick="filterProducts('toys', this)">🎾 Іграшки</button>
+      <button class="filter-btn" onclick="filterProducts('accessories', this)">🎀 Аксесуари</button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      </div>
+  </section>
+</div>
+
+<div class="page" id="page-prices">
+  <section style="padding-top:120px">
+    <div class="section-label">Прейскурант</div>
+    <h1 class="section-title">Наші <span style="color:var(--brand-pink)">ціни</span></h1>
+    <p class="section-desc">Прозорі та доступні ціни на всі послуги PawDay</p>
+
+    <div class="prices-tabs">
+      <button class="price-tab active" onclick="switchPriceTab('dogs', this)">🐕 Послуги для собак</button>
+      <button class="price-tab" onclick="switchPriceTab('cats', this)">🐈 Послуги для котів</button>
+    </div>
+
+    <div class="price-table active" id="price-dogs">
+      <table>
+        <thead>
+          <tr>
+            <th>Послуга</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Денне перебування</td><td>До 10 годин, годування включено</td><td class="price-highlight">450 грн</td></tr>
+          <tr><td>Ігрова зона</td><td>1 година активних ігор</td><td class="price-highlight">150 грн</td></tr>
+          <tr><td>Вигул</td><td>30 хвилин прогулянки</td><td class="price-highlight">200 грн</td></tr>
+          <tr><td>Дресирування (базовий)</td><td>1 індивідуальне заняття</td><td class="price-highlight">650 грн</td></tr>
+          <tr><td>Стрижка (мала порода)</td><td>Повна стрижка шерсті</td><td class="price-highlight">500 грн</td></tr>
+          <tr><td>Стрижка (велика порода)</td><td>Повна стрижка шерсті</td><td class="price-highlight">900 грн</td></tr>
+          <tr><td>Купання</td><td>Включно з сушінням</td><td class="price-highlight">350 грн</td></tr>
+          <tr><td>SPA-програма</td><td>Купання + маска + масаж</td><td class="price-highlight">1200 грн</td></tr>
+          <tr><td>Чистка вух</td><td>Безпечна гігієнічна процедура</td><td class="price-highlight">120 грн</td></tr>
+          <tr><td>Підстригання кігтів</td><td>Усі лапи</td><td class="price-highlight">100 грн</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="price-table" id="price-cats">
+      <table>
+        <thead>
+          <tr>
+            <th>Послуга</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Денне перебування</td><td>До 10 годин, годування включено</td><td class="price-highlight">380 грн</td></tr>
+          <tr><td>Ігрова зона</td><td>1 година в котячій зоні</td><td class="price-highlight">120 грн</td></tr>
+          <tr><td>Стрижка (короткошерстий)</td><td>Санітарна або гігієнічна</td><td class="price-highlight">450 грн</td></tr>
+          <tr><td>Стрижка (довгошерстий)</td><td>Повна стрижка</td><td class="price-highlight">750 грн</td></tr>
+          <tr><td>Купання</td><td>Включно з сушінням</td><td class="price-highlight">300 грн</td></tr>
+          <tr><td>SPA-програма</td><td>Купання + маска + масаж</td><td class="price-highlight">950 грн</td></tr>
+          <tr><td>Чистка вух</td><td>Безпечна гігієнічна процедура</td><td class="price-highlight">100 грн</td></tr>
+          <tr><td>Підстригання кігтів</td><td>Усі лапи</td><td class="price-highlight">80 грн</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-contacts">
+  <section style="padding-top:120px">
+    <div class="section-label">Зв'яжіться з нами</div>
+    <h1 class="section-title">Контактна <span style="color:var(--brand-teal)">інформація</span></h1>
+
+    <div class="contacts-grid">
+      <div>
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Адреса</div>
+              <div class="contact-value">вул. Хрещатик, 22, Київ</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Телефон</div>
+              <div class="contact-value">+38 (044) 123-45-67</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">hello@pawday.ua</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">⏰</div>
+            <div>
+              <div class="contact-label">Графік роботи</div>
+              <div class="contact-value">Пн–Пт: 8:00–20:00 | Сб–Нд: 9:00–18:00</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:28px">
+          <p style="color:var(--text-muted); font-size:0.85rem; font-weight:700; margin-bottom:12px;">СОЦІАЛЬНІ МЕРЕЖІ</p>
+          <div style="display:flex; gap:12px">
+            <a class="social-btn" href="#" onclick="showSocial('Instagram')">📸</a>
+            <a class="social-btn" href="#" onclick="showSocial('Facebook')">👍</a>
+            <a class="social-btn" href="#" onclick="showSocial('TikTok')">🎵</a>
+            <a class="social-btn" href="#" onclick="showSocial('Telegram')">✈️</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="feedback-form">
+        <div class="form-title">Форма зворотного зв'язку 💌</div>
+        <div class="form-group" id="fg-name">
+          <label>ІМ'Я ТА ПРІЗВИЩЕ</label>
+          <input type="text" id="f-name" placeholder="Іван Петренко" />
+          <div class="form-error">Будь ласка, введіть ваше ім'я</div>
+        </div>
+        <div class="form-group" id="fg-email">
+          <label>EMAIL</label>
+          <input type="email" id="f-email" placeholder="ivan@email.com" />
+          <div class="form-error">Введіть коректний email</div>
+        </div>
+        <div class="form-group" id="fg-pet">
+          <label>ВАШ УЛЮБЛЕНЕЦЬ</label>
+          <select id="f-pet">
+            <option value="">Оберіть тварину...</option>
+            <option value="dog">🐕 Собака</option>
+            <option value="cat">🐈 Кіт</option>
+            <option value="other">🐾 Інше</option>
+          </select>
+          <div class="form-error">Оберіть тип вашого улюбленця</div>
+        </div>
+        <div class="form-group" id="fg-message">
+          <label>ПОВІДОМЛЕННЯ</label>
+          <textarea id="f-message" placeholder="Розкажіть про вашого улюбленця або поставте запитання..."></textarea>
+          <div class="form-error">Будь ласка, введіть ваше повідомлення</div>
+        </div>
+        <button class="btn-submit" onclick="submitForm()">Надіслати повідомлення 🐾</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="cart-badge" id="cart-badge" onclick="showCart()">
+  🛒 Кошик: <span id="cart-count">0</span> товарів
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <span class="modal-icon" id="modal-icon">✅</span>
+    <div class="modal-title" id="modal-title">Успішно!</div>
+    <div class="modal-text" id="modal-text">Дякуємо за звернення!</div>
+    <button class="modal-close" onclick="closeModalBtn()">Добре!</button>
+  </div>
+</div>
+
+<div class="notification" id="notification">
+  <span class="notif-icon" id="notif-icon">🛒</span>
+  <span class="notif-text" id="notif-text">Додано до кошика!</span>
+</div>
+
+<footer>
+  <div class="footer-brand">🐾 PawDay</div>
+  <div class="footer-text">© 2024 PawDay. Всі права захищено. Зроблено з ❤️ для тварин</div>
+  <div class="footer-socials">
+    <a class="social-btn" href="#" onclick="showSocial('Instagram')">📸</a>
+    <a class="social-btn" href="#" onclick="showSocial('Facebook')">👍</a>
+    <a class="social-btn" href="#" onclick="showSocial('TikTok')">🎵</a>
+    <a class="social-btn" href="#" onclick="showSocial('Telegram')">✈️</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
