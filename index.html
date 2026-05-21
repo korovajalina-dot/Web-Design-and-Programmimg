@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PawDay — Догляд за вашими улюбленцями</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="main.js" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 100%;">
+    <a href="#" class="logo" onclick="navigate('home')">Paw<span>Day</span></a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="navigate('home')" id="nav-home" class="active">Головна</a></li>
+      <li><a href="#" onclick="navigate('about')" id="nav-about">Про нас</a></li>
+      <li><a href="#" onclick="navigate('services')" id="nav-services">Послуги</a></li>
+      <li><a href="#" onclick="navigate('shop')" id="nav-shop">Магазин</a></li>
+      <li><a href="#" onclick="navigate('prices')" id="nav-prices">Ціни</a></li>
+      <li><a href="#" onclick="navigate('contacts')" id="nav-contacts">Контакти</a></li>
+      <li><a href="#" onclick="navigate('order')" id="nav-order" class="nav-order-cta">Записатись</a></li>
+    </ul>
+    <i class="fas fa-bars menu-icon"></i>
+  </div>
+</header>
+
+<div class="page active" id="page-home">
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Турбота про ваших <span>пухнастих друзів</span></h1>
+        <p class="hero-desc">Ми пропонуємо повний спектр послуг для догляду за вашими улюбленцями: від грумінгу до денного перебування.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="navigate('services')">Наші послуги</button>
+          <button class="btn-primary" onclick="navigate('order')">Записатись</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="benefits">
+    <div class="container">
+      <div class="section-label">Наші переваги</div>
+      <h2 class="section-title">Чому обирають <span>PawDay</span></h2>
+      <p class="section-desc">Ми створили ідеальні умови для комфорту та щастя ваших тварин.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+          <h3 class="benefit-name">Професійна любов</h3>
+          <p class="benefit-desc">Наша команда — це сертифіковані спеціалісти, які щиро люблять тварин.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-bone"></i></div>
+          <h3 class="benefit-name">Безпека та комфорт</h3>
+          <p class="benefit-desc">Сучасне обладнання, чисті приміщення та ігрові зони.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-paw"></i></div>
+          <h3 class="benefit-name">Індивідуальний підхід</h3>
+          <p class="benefit-desc">Ми враховуємо особливості характеру та потреб кожного улюбленця.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-about">
+  <div class="container">
+    <section>
+      <div class="about-grid">
+        <div>
+          <h2 class="section-title">Про PawDay: <span>З любов'ю</span> до кожної лапки</h2>
+          <p class="section-desc">Ми команда ентузіастів, які прагнуть зробити життя ваших улюбленців кращим. Наш центр створений, щоб надавати професійний догляд, комфорт та радість вашим пухнастим друзям.</p>
+          <div class="feature-item">
+            <i class="fas fa-award feature-icon"></i>
+            <div>
+              <div class="feature-title">Досвід і Професіоналізм</div>
+              <div class="feature-desc">Наші грумери та доглядальники пройшли сертифікацію та мають багатий досвід роботи.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-star feature-icon"></i>
+            <div>
+              <div class="feature-title">Сучасний підхід</div>
+              <div class="feature-desc">Ми використовуємо передові методики догляду та найкращу косметику для тварин.</div>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="about-stat-card">
+            <div class="stat-big" data-target="500">500+</div>
+            <div class="stat-text">Задоволених клієнтів</div>
+          </div>
+          <div class="about-stat-card">
+            <div class="stat-big" data-target="5">5+</div>
+            <div class="stat-text">Років досвіду</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="page" id="page-services">
+  <div class="container">
+    <section>
+      <div class="section-label">Наші послуги</div>
+      <h2 class="section-title">Повний спектр <span>догляду</span></h2>
+      <p class="section-desc">Ми пропонуємо все необхідне для здоров'я та краси вашого улюбленця. Оберіть послугу та запишіться онлайн.</p>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-cut"></i></div>
+          <h3 class="benefit-name">Грумінг (Собаки)</h3>
+          <p class="benefit-desc">Комплексна стрижка, вичісування, чистка вух та підстригання кігтів для собак усіх порід.</p>
+          <button class="btn-primary" style="width: 100%; padding: 12px;" onclick="bookService('Грумінг для собак')">Записатись</button>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-cat"></i></div>
+          <h3 class="benefit-name">Грумінг (Коти)</h3>
+          <p class="benefit-desc">Обережний догляд за шерстю котів, купання та стрижка кігтів без стресу для улюбленця.</p>
+          <button class="btn-primary" style="width: 100%; padding: 12px;" onclick="bookService('Грумінг для котів')">Записатись</button>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-spa"></i></div>
+          <h3 class="benefit-name">SPA-догляд (Собаки)</h3>
+          <p class="benefit-desc">Розслаблюючі ванни з ароматерапією, озонотерапія та відновлюючі маски для шерсті собак.</p>
+          <button class="btn-primary" style="width: 100%; padding: 12px;" onclick="bookService('SPA-догляд для собак')">Записатись</button>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-water"></i></div>
+          <h3 class="benefit-name">SPA-догляд (Коти)</h3>
+          <p class="benefit-desc">Делікатний SPA-догляд для котів з використанням спеціальної гіпоалергенної косметики та м'яких засобів.</p>
+          <button class="btn-primary" style="width: 100%; padding: 12px;" onclick="bookService('SPA-догляд для котів')">Записатись</button>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-bone"></i></div>
+          <h3 class="benefit-name">Денний догляд (Собаки)</h3>
+          <p class="benefit-desc">Безпечне перебування, активні ігри з іншими собаками, вигул та соціалізація вашого улюбленця.</p>
+          <button class="btn-primary" style="width: 100%; padding: 12px;" onclick="bookService('Денний догляд для собак')">Записатись</button>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fas fa-home"></i></div>
+          <h3 class="benefit-name">Денний догляд (Коти)</h3>
+          <p class="benefit-desc">Спокійне та безпечне перебування для котів з індивідуальними затишними зонами та увагою.</p>
+          <button class="btn-primary" style="width: 100%; padding: 12px;" onclick="bookService('Денний догляд для котів')">Записатись</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="page" id="page-order">
+  <div class="container">
+    <section>
+      <div class="order-layout">
+        <h2 class="section-title">Онлайн <span>запис</span></h2>
+        <div class="order-form-card">
+          <div class="order-form-section-label">Контактна інформація</div>
+          <div class="form-group"><input type="text" id="of-owner" placeholder="Ваше ім'я" /></div>
+          <div class="form-group"><input type="tel" id="of-phone" placeholder="Телефон" /></div>
+
+          <div class="order-form-section-label">Інформація про тварину</div>
+          <div class="form-row">
+            <div class="form-group"><input type="text" id="of-petname" placeholder="Ім'я тварини" /></div>
+            <div class="form-group">
+              <select id="of-species">
+                <option value="">Оберіть вид...</option>
+                <option value="cat">Кіт</option>
+                <option value="dog">Собака</option>
+                <option value="other">Інше</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><input type="text" id="of-breed" placeholder="Порода" /></div>
+
+          <div class="order-form-section-label">Оберіть послуги (можна декілька)</div>
+          <div class="checkbox-grid" id="of-services-list">
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Грумінг для собак" onchange="autoSelectSpecies()">
+              <span>Грумінг (Собаки)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Грумінг для котів" onchange="autoSelectSpecies()">
+              <span>Грумінг (Коти)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="SPA-догляд для собак" onchange="autoSelectSpecies()">
+              <span>SPA (Собаки)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="SPA-догляд для котів" onchange="autoSelectSpecies()">
+              <span>SPA (Коти)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Денний догляд для собак" onchange="autoSelectSpecies()">
+              <span>Денний догляд (Собаки)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Денний догляд для котів" onchange="autoSelectSpecies()">
+              <span>Денний догляд (Коти)</span>
+            </label>
+          </div>
+
+          <div class="order-form-section-label" style="margin-top: 20px;">Дата та час</div>
+          <div class="form-row">
+            <div class="form-group"><input type="date" id="of-date" /></div>
+            <div class="form-group">
+              <select id="of-time">
+                <option value="">Час...</option>
+                <option value="9:00">09:00</option>
+                <option value="12:00">12:00</option>
+                <option value="15:00">15:00</option>
+                <option value="18:00">18:00</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="submitOrder()">Підтвердити запис</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="page" id="page-shop">
+  <section id="shop">
+    <div class="container">
+      <div class="section-label">Магазин</div>
+      <h2 class="section-title">Товари для <span>улюбленців</span></h2>
+      
+      <div class="shop-filter">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">Всі товари</button>
+        <button class="filter-btn" onclick="filterProducts('food', this)">Корм</button>
+        <button class="filter-btn" onclick="filterProducts('treats', this)">Ласощі</button>
+        <button class="filter-btn" onclick="filterProducts('toys', this)">Іграшки</button>
+        <button class="filter-btn" onclick="filterProducts('accessories', this)">Аксесуари</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+        </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-prices">
+  <section id="prices">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center;">Прайс <span>PawDay</span></h2>
+      <div class="prices-tabs" style="justify-content: center;">
+        <button class="price-tab active" onclick="switchPriceTab('dogs', this)">Для собак</button>
+        <button class="price-tab" onclick="switchPriceTab('cats', this)">Для котів</button>
+      </div>
+
+      <div class="price-table active" id="price-dogs">
+        <table>
+          <thead><tr><th>Послуга</th><th>Ціна</th></tr></thead>
+          <tbody>
+            <tr><td>Денне перебування (мала порода)</td><td class="price-highlight">400 грн</td></tr>
+            <tr><td>Денне перебування (велика порода)</td><td class="price-highlight">600 грн</td></tr>
+            <tr><td>Грумінг (повний комплекс)</td><td class="price-highlight">900 грн</td></tr>
+            <tr><td>Купання</td><td class="price-highlight">350 грн</td></tr>
+            <tr><td>SPA-догляд</td><td class="price-highlight">1200 грн</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="price-table" id="price-cats">
+        <table>
+          <thead><tr><th>Послуга</th><th>Ціна</th></tr></thead>
+          <tbody>
+            <tr><td>Денне перебування</td><td class="price-highlight">350 грн</td></tr>
+            <tr><td>Грумінг (повний комплекс)</td><td class="price-highlight">800 грн</td></tr>
+            <tr><td>Купання</td><td class="price-highlight">300 грн</td></tr>
+            <tr><td>SPA-догляд</td><td class="price-highlight">950 грн</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-contacts">
+  <div class="container">
+    <section>
+      <div class="section-label">Зв'яжіться з нами</div>
+      <h2 class="section-title">Контактна <span>інформація</span></h2>
+      <div class="contacts-grid">
+        <ul class="contact-list">
+          <li class="contact-item"><i class="fas fa-map-marker-alt contact-icon"></i> вуд. Хрещатик, 22, Київ</li>
+          <li class="contact-item"><i class="fas fa-phone contact-icon"></i> +38 (044) 123-45-67</li>
+          <li class="contact-item"><i class="fas fa-envelope contact-icon"></i> info@pawday.com.ua</li>
+          <li class="contact-item"><i class="fas fa-clock contact-icon"></i> Пн-Нд: 09:00 - 20:00</li>
+        </ul>
+        <div class="feedback-form">
+          <div class="form-title">Залиште повідомлення</div>
+          <div class="form-group"><input type="text" id="f-name" placeholder="Ваше ім'я" /></div>
+          <div class="form-group"><input type="email" id="f-email" placeholder="Ваш Email" /></div>
+          <div class="form-group"><textarea id="f-message" placeholder="Повідомлення..."></textarea></div>
+          <button class="btn-primary" style="width: 100%;" onclick="submitForm()">Надіслати</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="page" id="page-order">
+  <div class="container">
+    <section>
+      <div class="order-layout">
+        <h2 class="section-title">Онлайн <span>запис</span></h2>
+        <div class="order-form-card">
+          <div class="order-form-section-label">Контактна інформація</div>
+          <div class="form-group"><input type="text" id="of-owner" placeholder="Ваше ім'я" /></div>
+          <div class="form-group"><input type="tel" id="of-phone" placeholder="Телефон" /></div>
+
+          <div class="order-form-section-label">Інформація про тварину</div>
+          <div class="form-row">
+            <div class="form-group"><input type="text" id="of-petname" placeholder="Ім'я" /></div>
+            <div class="form-group">
+              <select id="of-species">
+                <option value="">Оберіть вид...</option>
+                <option value="cat">Кіт</option>
+                <option value="dog">Собака</option>
+                <option value="other">Інше</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><input type="text" id="of-breed" placeholder="Порода" /></div>
+
+          <div class="order-form-section-label">Оберіть послуги (можна декілька)</div>
+          <div class="checkbox-grid" id="of-services-list">
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Грумінг для собак" onchange="autoSelectSpecies()">
+              <span>Грумінг (Собаки)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Грумінг для котів" onchange="autoSelectSpecies()">
+              <span>Грумінг (Коти)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="SPA-догляд для собак" onchange="autoSelectSpecies()">
+              <span>SPA-догляд (Собаки)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="SPA-догляд для котів" onchange="autoSelectSpecies()">
+              <span>SPA-догляд (Коти)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Денний догляд" onchange="autoSelectSpecies()">
+              <span>Денний догляд</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" value="Вигул" onchange="autoSelectSpecies()">
+              <span>Вигул</span>
+            </label>
+          </div>
+
+          <div class="order-form-section-label">Дата та час</div>
+          <div class="form-row">
+            <div class="form-group"><input type="date" id="of-date" /></div>
+            <div class="form-group">
+              <select id="of-time">
+                <option value="">Час...</option>
+                <option value="9:00">09:00</option>
+                <option value="12:00">12:00</option>
+                <option value="15:00">15:00</option>
+                <option value="18:00">18:00</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn-primary" style="width: 100%; margin-top: 20px;" onclick="submitOrder()">Підтвердити запис</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="cart-badge" id="cart-badge" onclick="showCart()">
+  <i class="fas fa-shopping-cart"></i> Кошик (<span id="cart-count">0</span>)
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-title" id="modal-title">Повідомлення</div>
+    <div class="modal-text" id="modal-text"></div>
+    <button class="btn-primary" style="width: 100%;" onclick="closeModalBtn()">Закрити</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="cart-modal-overlay" onclick="closeCartModal(event)">
+  <div class="modal">
+    <div class="modal-title">Ваш кошик</div>
+    <div id="cart-items-container" class="cart-items-container"></div>
+    <div class="cart-total">Всього: <span id="cart-total-price">0</span> грн</div>
+    <div class="form-group"><input type="text" id="cart-name" placeholder="Ім'я" /></div>
+    <div class="form-group"><input type="tel" id="cart-phone" placeholder="Телефон" /></div>
+    <button class="btn-primary" style="width: 100%; margin-bottom: 10px;" onclick="checkoutCart()">Оформити замовлення</button>
+    <button class="btn-secondary" style="width: 100%;" onclick="closeCartModalBtn()">Продовжити покупки</button>
+  </div>
+</div>
+
+<div id="notifications-container" class="notifications-container"></div>
+
+<footer>
+  <div class="container">
+    <div class="footer-logo">Paw<span>Day</span></div>
+    <p class="footer-text">© 2026 PawDay. Всі права захищено. </p>
+  </div>
+</footer>
+
+</body>
+</html>
